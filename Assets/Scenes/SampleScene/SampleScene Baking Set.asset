@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4881f9a2c4d568047b316028d20a8dca, type: 3}
   m_Name: SampleScene Baking Set
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.ProbeVolumeBakingSet
-  singleSceneMode: 0
-  dialogNoProbeVolumeInSetShown: 1
+  singleSceneMode: 1
+  dialogNoProbeVolumeInSetShown: 0
   settings:
     m_Version: 1
     dilationSettings:
-      enableDilation: 1
+      enableDilation: 0
       dilationDistance: 1
       dilationValidityThreshold: 0.25
       dilationIterations: 1
@@ -5323,763 +5323,763 @@ MonoBehaviour:
   cellSharedDataAsset:
     m_AssetGUID: 98eccd44c4aad654887dc027f15cec99
     m_StreamableAssetPath: APVStreamingAssets\80d845f12d0dba64198a81414faa01da\98eccd44c4aad654887dc027f15cec99.bytes
-    m_ElementSize: 81920
+    m_ElementSize: 8192
     m_StreamableCellDescs:
       m_Keys: c30100000e02000085030000d0030000a6000000f1000000d20100001d02000068020000b3020000fe0200004903000094030000df0300006a000000b5000000000100004b01000096010000e10100002c02000077020000c20200000d03000058030000a303000079000000f00100003b02000086020000d10200009800000079010000c40100000f0200005a020000a502000086030000d10300005c000000a7000000f20000003d01000088010000d30100001e02000069020000b4020000ff0200004a030000950300006b000000b6000000010100004c01000097010000e20100000e03000059030000a40300004e000000990000007a010000c5010000100200005b020000a602000087030000d20300005d000000a8000000f30000003e01000089010000d4010000b5020000000300004b030000960300006c000000020100004d0100000f0300005a030000a50300004f0000009a000000c6010000110200005c020000a702000088030000d30300005e000000a9000000f40000003f0100008a010000d5010000200200006b020000b6020000010300004c030000970300006d000000b8000000030100004e01000099010000e40100005b030000a60300006a030000b5030000120200005d020000a802000089030000d40300005f000000aa000000f5000000400100008b010000d6010000210200006c020000b7020000020300004d03000098030000e30300006e000000b9000000040100005c030000a70300006b030000b6030000130200005e020000a9020000f40200008a030000d503000060000000ab000000f6000000410100008c010000d7010000220200006d020000b8020000030300004e03000099030000e40300006f000000ba000000500100005d030000a80300006c0300007e010000c9010000140200005f020000aa020000f5020000400300008b030000d603000061000000ac000000f7000000420100008d010000d801000023020000040300004f0300009a03000070000000bb0000005e030000a90300006d030000340100007f010000ca0100001502000060020000ab020000f6020000410300008c030000d703000062000000ad000000f8000000430100008e010000500300009b030000e603000071000000bc000000070100005f030000aa0300003501000080010000cb0100001602000061020000ac020000f702000042030000d803000063000000ae000000f900000044010000510300009c030000e703000072000000bd0000000801000060030000ab03000055000000a00000003601000081010000cc0100001702000062020000ad020000f802000043030000d903000064000000af000000fa00000045010000900100002602000071020000bc02000007030000520300009d030000e80300007300000061030000ac03000070030000bb03000056000000a100000082010000cd0100001802000063020000ae02000044030000da03000065000000b0000000fb0000004601000091010000dc0100002702000072020000bd02000008030000530300009e030000e9030000740000000a01000055010000a0010000eb0100003602000081020000cc0200001703000062030000ad030000830000004502000090020000db0200002603000057000000a2000000af02000045030000db03000066000000b1000000fc0000004701000092010000dd0100002802000073020000be02000009030000540300009f030000ea03000075000000c00000000b01000056010000a1010000ec0100003702000082020000cd0200001803000063030000ae03000084000000cf0000001a01000065010000b0010000fb0100004602000091020000dc0200002703000058000000a3000000ee0000003901000084010000cf0100001a02000065020000b0020000fb0200004603000091030000dc03000067000000b2000000fd0000004801000093010000de0100002902000074020000bf0200000a03000055030000a0030000eb03000076000000c10000000c01000057010000a2010000ed01000038020000d00000001b01000066010000b1010000fc010000
       m_Values:
       - offset: 0
         elementCount: 1
-      - offset: 81920
+      - offset: 8192
         elementCount: 1
-      - offset: 163840
+      - offset: 16384
         elementCount: 1
-      - offset: 245760
+      - offset: 24576
         elementCount: 10
-      - offset: 1064960
+      - offset: 106496
         elementCount: 4
-      - offset: 1392640
+      - offset: 139264
         elementCount: 1
-      - offset: 1474560
+      - offset: 147456
         elementCount: 10
-      - offset: 2293760
+      - offset: 229376
         elementCount: 15
-      - offset: 3522560
+      - offset: 352256
         elementCount: 16
-      - offset: 4833280
+      - offset: 483328
         elementCount: 13
-      - offset: 5898240
+      - offset: 589824
         elementCount: 16
-      - offset: 7208960
+      - offset: 720896
         elementCount: 14
-      - offset: 8355840
+      - offset: 835584
         elementCount: 13
-      - offset: 9420800
+      - offset: 942080
         elementCount: 1
-      - offset: 9502720
+      - offset: 950272
         elementCount: 16
-      - offset: 10813440
+      - offset: 1081344
         elementCount: 13
-      - offset: 11878400
+      - offset: 1187840
         elementCount: 14
-      - offset: 13025280
+      - offset: 1302528
         elementCount: 16
-      - offset: 14336000
+      - offset: 1433600
         elementCount: 16
-      - offset: 15646720
+      - offset: 1564672
         elementCount: 15
-      - offset: 16875520
+      - offset: 1687552
         elementCount: 14
-      - offset: 18022400
+      - offset: 1802240
         elementCount: 11
-      - offset: 18923520
+      - offset: 1892352
         elementCount: 15
-      - offset: 20152320
+      - offset: 2015232
         elementCount: 9
-      - offset: 20889600
+      - offset: 2088960
         elementCount: 9
-      - offset: 21626880
+      - offset: 2162688
         elementCount: 15
-      - offset: 22855680
+      - offset: 2285568
         elementCount: 5
-      - offset: 23265280
+      - offset: 2326528
         elementCount: 3
-      - offset: 23511040
+      - offset: 2351104
         elementCount: 10
-      - offset: 24330240
+      - offset: 2433024
         elementCount: 1
+      - offset: 2441216
+        elementCount: 2
+      - offset: 2457600
+        elementCount: 2
+      - offset: 2473984
+        elementCount: 1
+      - offset: 2482176
+        elementCount: 10
+      - offset: 2564096
+        elementCount: 14
+      - offset: 2678784
+        elementCount: 10
+      - offset: 2760704
+        elementCount: 6
+      - offset: 2809856
+        elementCount: 2
+      - offset: 2826240
+        elementCount: 9
+      - offset: 2899968
+        elementCount: 10
+      - offset: 2981888
+        elementCount: 15
+      - offset: 3104768
+        elementCount: 11
+      - offset: 3194880
+        elementCount: 6
+      - offset: 3244032
+        elementCount: 13
+      - offset: 3350528
+        elementCount: 7
+      - offset: 3407872
+        elementCount: 1
+      - offset: 3416064
+        elementCount: 4
+      - offset: 3448832
+        elementCount: 9
+      - offset: 3522560
+        elementCount: 13
+      - offset: 3629056
+        elementCount: 8
+      - offset: 3694592
+        elementCount: 14
+      - offset: 3809280
+        elementCount: 10
+      - offset: 3891200
+        elementCount: 1
+      - offset: 3899392
+        elementCount: 5
+      - offset: 3940352
+        elementCount: 10
+      - offset: 4022272
+        elementCount: 9
+      - offset: 4096000
+        elementCount: 1
+      - offset: 4104192
+        elementCount: 10
+      - offset: 4186112
+        elementCount: 13
+      - offset: 4292608
+        elementCount: 15
+      - offset: 4415488
+        elementCount: 1
+      - offset: 4423680
+        elementCount: 6
+      - offset: 4472832
+        elementCount: 1
+      - offset: 4481024
+        elementCount: 11
+      - offset: 4571136
+        elementCount: 14
+      - offset: 4685824
+        elementCount: 18
+      - offset: 4833280
+        elementCount: 18
+      - offset: 4980736
+        elementCount: 3
+      - offset: 5005312
+        elementCount: 9
+      - offset: 5079040
+        elementCount: 14
+      - offset: 5193728
+        elementCount: 10
+      - offset: 5275648
+        elementCount: 8
+      - offset: 5341184
+        elementCount: 11
+      - offset: 5431296
+        elementCount: 14
+      - offset: 5545984
+        elementCount: 3
+      - offset: 5570560
+        elementCount: 7
+      - offset: 5627904
+        elementCount: 14
+      - offset: 5742592
+        elementCount: 9
+      - offset: 5816320
+        elementCount: 14
+      - offset: 5931008
+        elementCount: 12
+      - offset: 6029312
+        elementCount: 9
+      - offset: 6103040
+        elementCount: 4
+      - offset: 6135808
+        elementCount: 12
+      - offset: 6234112
+        elementCount: 12
+      - offset: 6332416
+        elementCount: 7
+      - offset: 6389760
+        elementCount: 1
+      - offset: 6397952
+        elementCount: 1
+      - offset: 6406144
+        elementCount: 3
+      - offset: 6430720
+        elementCount: 15
+      - offset: 6553600
+        elementCount: 15
+      - offset: 6676480
+        elementCount: 4
+      - offset: 6709248
+        elementCount: 3
+      - offset: 6733824
+        elementCount: 9
+      - offset: 6807552
+        elementCount: 13
+      - offset: 6914048
+        elementCount: 14
+      - offset: 7028736
+        elementCount: 4
+      - offset: 7061504
+        elementCount: 14
+      - offset: 7176192
+        elementCount: 16
+      - offset: 7307264
+        elementCount: 19
+      - offset: 7462912
+        elementCount: 7
+      - offset: 7520256
+        elementCount: 11
+      - offset: 7610368
+        elementCount: 18
+      - offset: 7757824
+        elementCount: 14
+      - offset: 7872512
+        elementCount: 5
+      - offset: 7913472
+        elementCount: 14
+      - offset: 8028160
+        elementCount: 11
+      - offset: 8118272
+        elementCount: 5
+      - offset: 8159232
+        elementCount: 13
+      - offset: 8265728
+        elementCount: 1
+      - offset: 8273920
+        elementCount: 1
+      - offset: 8282112
+        elementCount: 3
+      - offset: 8306688
+        elementCount: 15
+      - offset: 8429568
+        elementCount: 10
+      - offset: 8511488
+        elementCount: 3
+      - offset: 8536064
+        elementCount: 1
+      - offset: 8544256
+        elementCount: 2
+      - offset: 8560640
+        elementCount: 5
+      - offset: 8601600
+        elementCount: 4
+      - offset: 8634368
+        elementCount: 2
+      - offset: 8650752
+        elementCount: 10
+      - offset: 8732672
+        elementCount: 10
+      - offset: 8814592
+        elementCount: 12
+      - offset: 8912896
+        elementCount: 15
+      - offset: 9035776
+        elementCount: 14
+      - offset: 9150464
+        elementCount: 14
+      - offset: 9265152
+        elementCount: 14
+      - offset: 9379840
+        elementCount: 12
+      - offset: 9478144
+        elementCount: 9
+      - offset: 9551872
+        elementCount: 16
+      - offset: 9682944
+        elementCount: 14
+      - offset: 9797632
+        elementCount: 5
+      - offset: 9838592
+        elementCount: 13
+      - offset: 9945088
+        elementCount: 1
+      - offset: 9953280
+        elementCount: 8
+      - offset: 10018816
+        elementCount: 3
+      - offset: 10043392
+        elementCount: 1
+      - offset: 10051584
+        elementCount: 14
+      - offset: 10166272
+        elementCount: 13
+      - offset: 10272768
+        elementCount: 2
+      - offset: 10289152
+        elementCount: 1
+      - offset: 10297344
+        elementCount: 3
+      - offset: 10321920
+        elementCount: 13
+      - offset: 10428416
+        elementCount: 14
+      - offset: 10543104
+        elementCount: 6
+      - offset: 10592256
+        elementCount: 2
+      - offset: 10608640
+        elementCount: 10
+      - offset: 10690560
+        elementCount: 4
+      - offset: 10723328
+        elementCount: 10
+      - offset: 10805248
+        elementCount: 14
+      - offset: 10919936
+        elementCount: 22
+      - offset: 11100160
+        elementCount: 14
+      - offset: 11214848
+        elementCount: 14
+      - offset: 11329536
+        elementCount: 9
+      - offset: 11403264
+        elementCount: 1
+      - offset: 11411456
+        elementCount: 1
+      - offset: 11419648
+        elementCount: 12
+      - offset: 11517952
+        elementCount: 4
+      - offset: 11550720
+        elementCount: 14
+      - offset: 11665408
+        elementCount: 1
+      - offset: 11673600
+        elementCount: 11
+      - offset: 11763712
+        elementCount: 6
+      - offset: 11812864
+        elementCount: 4
+      - offset: 11845632
+        elementCount: 16
+      - offset: 11976704
+        elementCount: 13
+      - offset: 12083200
+        elementCount: 7
+      - offset: 12140544
+        elementCount: 2
+      - offset: 12156928
+        elementCount: 7
+      - offset: 12214272
+        elementCount: 10
+      - offset: 12296192
+        elementCount: 13
+      - offset: 12402688
+        elementCount: 14
+      - offset: 12517376
+        elementCount: 13
+      - offset: 12623872
+        elementCount: 1
+      - offset: 12632064
+        elementCount: 7
+      - offset: 12689408
+        elementCount: 7
+      - offset: 12746752
+        elementCount: 6
+      - offset: 12795904
+        elementCount: 6
+      - offset: 12845056
+        elementCount: 15
+      - offset: 12967936
+        elementCount: 14
+      - offset: 13082624
+        elementCount: 12
+      - offset: 13180928
+        elementCount: 5
+      - offset: 13221888
+        elementCount: 1
+      - offset: 13230080
+        elementCount: 5
+      - offset: 13271040
+        elementCount: 9
+      - offset: 13344768
+        elementCount: 14
+      - offset: 13459456
+        elementCount: 10
+      - offset: 13541376
+        elementCount: 9
+      - offset: 13615104
+        elementCount: 16
+      - offset: 13746176
+        elementCount: 9
+      - offset: 13819904
+        elementCount: 5
+      - offset: 13860864
+        elementCount: 2
+      - offset: 13877248
+        elementCount: 11
+      - offset: 13967360
+        elementCount: 13
+      - offset: 14073856
+        elementCount: 13
+      - offset: 14180352
+        elementCount: 14
+      - offset: 14295040
+        elementCount: 14
+      - offset: 14409728
+        elementCount: 14
+      - offset: 14524416
+        elementCount: 9
+      - offset: 14598144
+        elementCount: 3
+      - offset: 14622720
+        elementCount: 10
+      - offset: 14704640
+        elementCount: 11
+      - offset: 14794752
+        elementCount: 6
+      - offset: 14843904
+        elementCount: 15
+      - offset: 14966784
+        elementCount: 12
+      - offset: 15065088
+        elementCount: 3
+      - offset: 15089664
+        elementCount: 14
+      - offset: 15204352
+        elementCount: 12
+      - offset: 15302656
+        elementCount: 3
+      - offset: 15327232
+        elementCount: 12
+      - offset: 15425536
+        elementCount: 10
+      - offset: 15507456
+        elementCount: 2
+      - offset: 15523840
+        elementCount: 5
+      - offset: 15564800
+        elementCount: 12
+      - offset: 15663104
+        elementCount: 10
+      - offset: 15745024
+        elementCount: 14
+      - offset: 15859712
+        elementCount: 14
+      - offset: 15974400
+        elementCount: 14
+      - offset: 16089088
+        elementCount: 13
+      - offset: 16195584
+        elementCount: 14
+      - offset: 16310272
+        elementCount: 13
+      - offset: 16416768
+        elementCount: 9
+      - offset: 16490496
+        elementCount: 11
+      - offset: 16580608
+        elementCount: 13
+      - offset: 16687104
+        elementCount: 10
+      - offset: 16769024
+        elementCount: 15
+      - offset: 16891904
+        elementCount: 4
+      - offset: 16924672
+        elementCount: 12
+      - offset: 17022976
+        elementCount: 16
+      - offset: 17154048
+        elementCount: 2
+      - offset: 17170432
+        elementCount: 6
+      - offset: 17219584
+        elementCount: 9
+      - offset: 17293312
+        elementCount: 3
+      - offset: 17317888
+        elementCount: 2
+      - offset: 17334272
+        elementCount: 8
+      - offset: 17399808
+        elementCount: 1
+      - offset: 17408000
+        elementCount: 1
+      - offset: 17416192
+        elementCount: 5
+      - offset: 17457152
+        elementCount: 11
+      - offset: 17547264
+        elementCount: 13
+      - offset: 17653760
+        elementCount: 13
+      - offset: 17760256
+        elementCount: 14
+      - offset: 17874944
+        elementCount: 13
+      - offset: 17981440
+        elementCount: 8
+      - offset: 18046976
+        elementCount: 2
+      - offset: 18063360
+        elementCount: 11
+      - offset: 18153472
+        elementCount: 16
+      - offset: 18284544
+        elementCount: 15
+      - offset: 18407424
+        elementCount: 16
+      - offset: 18538496
+        elementCount: 13
+      - offset: 18644992
+        elementCount: 4
+      - offset: 18677760
+        elementCount: 2
+      - offset: 18694144
+        elementCount: 1
+      - offset: 18702336
+        elementCount: 2
+      - offset: 18718720
+        elementCount: 9
+      - offset: 18792448
+        elementCount: 15
+      - offset: 18915328
+        elementCount: 11
+      - offset: 19005440
+        elementCount: 3
+      - offset: 19030016
+        elementCount: 5
+      - offset: 19070976
+        elementCount: 13
+      - offset: 19177472
+        elementCount: 15
+      - offset: 19300352
+        elementCount: 1
+      - offset: 19308544
+        elementCount: 4
+      - offset: 19341312
+        elementCount: 3
+      - offset: 19365888
+        elementCount: 5
+      - offset: 19406848
+        elementCount: 1
+      - offset: 19415040
+        elementCount: 4
+      - offset: 19447808
+        elementCount: 1
+      - offset: 19456000
+        elementCount: 2
+      - offset: 19472384
+        elementCount: 2
+      - offset: 19488768
+        elementCount: 6
+      - offset: 19537920
+        elementCount: 10
+      - offset: 19619840
+        elementCount: 16
+      - offset: 19750912
+        elementCount: 11
+      - offset: 19841024
+        elementCount: 11
+      - offset: 19931136
+        elementCount: 4
+      - offset: 19963904
+        elementCount: 15
+      - offset: 20086784
+        elementCount: 14
+      - offset: 20201472
+        elementCount: 14
+      - offset: 20316160
+        elementCount: 14
+      - offset: 20430848
+        elementCount: 14
+      - offset: 20545536
+        elementCount: 13
+      - offset: 20652032
+        elementCount: 17
+      - offset: 20791296
+        elementCount: 10
+      - offset: 20873216
+        elementCount: 7
+      - offset: 20930560
+        elementCount: 11
+      - offset: 21020672
+        elementCount: 5
+      - offset: 21061632
+        elementCount: 15
+      - offset: 21184512
+        elementCount: 4
+      - offset: 21217280
+        elementCount: 3
+      - offset: 21241856
+        elementCount: 9
+      - offset: 21315584
+        elementCount: 14
+      - offset: 21430272
+        elementCount: 11
+      - offset: 21520384
+        elementCount: 14
+      - offset: 21635072
+        elementCount: 3
+      - offset: 21659648
+        elementCount: 15
+      - offset: 21782528
+        elementCount: 3
+      - offset: 21807104
+        elementCount: 1
+      - offset: 21815296
+        elementCount: 5
+      - offset: 21856256
+        elementCount: 1
+      - offset: 21864448
+        elementCount: 3
+      - offset: 21889024
+        elementCount: 1
+      - offset: 21897216
+        elementCount: 3
+      - offset: 21921792
+        elementCount: 1
+      - offset: 21929984
+        elementCount: 1
+      - offset: 21938176
+        elementCount: 10
+      - offset: 22020096
+        elementCount: 10
+      - offset: 22102016
+        elementCount: 15
+      - offset: 22224896
+        elementCount: 14
+      - offset: 22339584
+        elementCount: 12
+      - offset: 22437888
+        elementCount: 9
+      - offset: 22511616
+        elementCount: 3
+      - offset: 22536192
+        elementCount: 8
+      - offset: 22601728
+        elementCount: 11
+      - offset: 22691840
+        elementCount: 12
+      - offset: 22790144
+        elementCount: 5
+      - offset: 22831104
+        elementCount: 21
+      - offset: 23003136
+        elementCount: 14
+      - offset: 23117824
+        elementCount: 9
+      - offset: 23191552
+        elementCount: 21
+      - offset: 23363584
+        elementCount: 14
+      - offset: 23478272
+        elementCount: 14
+      - offset: 23592960
+        elementCount: 19
+      - offset: 23748608
+        elementCount: 15
+      - offset: 23871488
+        elementCount: 17
+      - offset: 24010752
+        elementCount: 19
+      - offset: 24166400
+        elementCount: 14
+      - offset: 24281088
+        elementCount: 16
       - offset: 24412160
+        elementCount: 19
+      - offset: 24567808
+        elementCount: 3
+      - offset: 24592384
+        elementCount: 7
+      - offset: 24649728
+        elementCount: 8
+      - offset: 24715264
+        elementCount: 9
+      - offset: 24788992
+        elementCount: 6
+      - offset: 24838144
+        elementCount: 4
+      - offset: 24870912
+        elementCount: 6
+      - offset: 24920064
+        elementCount: 4
+      - offset: 24952832
         elementCount: 2
-      - offset: 24576000
-        elementCount: 2
-      - offset: 24739840
-        elementCount: 1
-      - offset: 24821760
+      - offset: 24969216
+        elementCount: 11
+      - offset: 25059328
+        elementCount: 4
+      - offset: 25092096
+        elementCount: 7
+      - offset: 25149440
+        elementCount: 10
+      - offset: 25231360
+        elementCount: 10
+      - offset: 25313280
+        elementCount: 10
+      - offset: 25395200
+        elementCount: 10
+      - offset: 25477120
+        elementCount: 10
+      - offset: 25559040
         elementCount: 10
       - offset: 25640960
-        elementCount: 14
-      - offset: 26787840
         elementCount: 10
-      - offset: 27607040
-        elementCount: 6
-      - offset: 28098560
-        elementCount: 2
-      - offset: 28262400
-        elementCount: 9
-      - offset: 28999680
-        elementCount: 10
-      - offset: 29818880
-        elementCount: 15
-      - offset: 31047680
+      - offset: 25722880
         elementCount: 11
-      - offset: 31948800
+      - offset: 25812992
+        elementCount: 11
+      - offset: 25903104
+        elementCount: 10
+      - offset: 25985024
+        elementCount: 10
+      - offset: 26066944
+        elementCount: 10
+      - offset: 26148864
         elementCount: 6
-      - offset: 32440320
+      - offset: 26198016
+        elementCount: 14
+      - offset: 26312704
         elementCount: 13
-      - offset: 33505280
-        elementCount: 7
-      - offset: 34078720
-        elementCount: 1
-      - offset: 34160640
-        elementCount: 4
-      - offset: 34488320
-        elementCount: 9
-      - offset: 35225600
+      - offset: 26419200
         elementCount: 13
-      - offset: 36290560
+      - offset: 26525696
+        elementCount: 13
+      - offset: 26632192
+        elementCount: 13
+      - offset: 26738688
+        elementCount: 13
+      - offset: 26845184
+        elementCount: 10
+      - offset: 26927104
+        elementCount: 3
+      - offset: 26951680
+        elementCount: 2
+      - offset: 26968064
+        elementCount: 10
+      - offset: 27049984
+        elementCount: 6
+      - offset: 27099136
         elementCount: 8
-      - offset: 36945920
-        elementCount: 14
-      - offset: 38092800
-        elementCount: 10
-      - offset: 38912000
-        elementCount: 1
-      - offset: 38993920
-        elementCount: 5
-      - offset: 39403520
-        elementCount: 10
-      - offset: 40222720
-        elementCount: 9
-      - offset: 40960000
-        elementCount: 1
-      - offset: 41041920
-        elementCount: 10
-      - offset: 41861120
-        elementCount: 13
-      - offset: 42926080
-        elementCount: 15
-      - offset: 44154880
-        elementCount: 1
-      - offset: 44236800
+      - offset: 27164672
+        elementCount: 2
+      - offset: 27181056
         elementCount: 6
-      - offset: 44728320
-        elementCount: 1
-      - offset: 44810240
-        elementCount: 11
-      - offset: 45711360
+      - offset: 27230208
         elementCount: 14
-      - offset: 46858240
-        elementCount: 18
-      - offset: 48332800
-        elementCount: 18
-      - offset: 49807360
-        elementCount: 3
-      - offset: 50053120
-        elementCount: 9
-      - offset: 50790400
+      - offset: 27344896
+        elementCount: 13
+      - offset: 27451392
         elementCount: 14
-      - offset: 51937280
-        elementCount: 10
-      - offset: 52756480
-        elementCount: 8
-      - offset: 53411840
-        elementCount: 11
-      - offset: 54312960
+      - offset: 27566080
+        elementCount: 13
+      - offset: 27672576
         elementCount: 14
-      - offset: 55459840
-        elementCount: 3
-      - offset: 55705600
-        elementCount: 7
-      - offset: 56279040
-        elementCount: 14
-      - offset: 57425920
-        elementCount: 9
-      - offset: 58163200
-        elementCount: 14
-      - offset: 59310080
+      - offset: 27787264
+        elementCount: 2
+      - offset: 27803648
+        elementCount: 13
+      - offset: 27910144
+        elementCount: 13
+      - offset: 28016640
         elementCount: 12
-      - offset: 60293120
-        elementCount: 9
-      - offset: 61030400
-        elementCount: 4
-      - offset: 61358080
-        elementCount: 12
-      - offset: 62341120
-        elementCount: 12
-      - offset: 63324160
-        elementCount: 7
-      - offset: 63897600
-        elementCount: 1
-      - offset: 63979520
-        elementCount: 1
-      - offset: 64061440
-        elementCount: 3
-      - offset: 64307200
-        elementCount: 15
-      - offset: 65536000
-        elementCount: 15
-      - offset: 66764800
-        elementCount: 4
-      - offset: 67092480
-        elementCount: 3
-      - offset: 67338240
-        elementCount: 9
-      - offset: 68075520
-        elementCount: 13
-      - offset: 69140480
-        elementCount: 14
-      - offset: 70287360
-        elementCount: 4
-      - offset: 70615040
-        elementCount: 14
-      - offset: 71761920
-        elementCount: 16
-      - offset: 73072640
-        elementCount: 19
-      - offset: 74629120
-        elementCount: 7
-      - offset: 75202560
+      - offset: 28114944
         elementCount: 11
-      - offset: 76103680
-        elementCount: 18
-      - offset: 77578240
-        elementCount: 14
-      - offset: 78725120
-        elementCount: 5
-      - offset: 79134720
-        elementCount: 14
-      - offset: 80281600
-        elementCount: 11
-      - offset: 81182720
-        elementCount: 5
-      - offset: 81592320
-        elementCount: 13
-      - offset: 82657280
-        elementCount: 1
-      - offset: 82739200
-        elementCount: 1
-      - offset: 82821120
-        elementCount: 3
-      - offset: 83066880
-        elementCount: 15
-      - offset: 84295680
-        elementCount: 10
-      - offset: 85114880
-        elementCount: 3
-      - offset: 85360640
-        elementCount: 1
-      - offset: 85442560
-        elementCount: 2
-      - offset: 85606400
-        elementCount: 5
-      - offset: 86016000
-        elementCount: 4
-      - offset: 86343680
-        elementCount: 2
-      - offset: 86507520
-        elementCount: 10
-      - offset: 87326720
-        elementCount: 10
-      - offset: 88145920
-        elementCount: 12
-      - offset: 89128960
-        elementCount: 15
-      - offset: 90357760
-        elementCount: 14
-      - offset: 91504640
-        elementCount: 14
-      - offset: 92651520
-        elementCount: 14
-      - offset: 93798400
-        elementCount: 12
-      - offset: 94781440
-        elementCount: 9
-      - offset: 95518720
-        elementCount: 16
-      - offset: 96829440
-        elementCount: 14
-      - offset: 97976320
-        elementCount: 5
-      - offset: 98385920
-        elementCount: 13
-      - offset: 99450880
-        elementCount: 1
-      - offset: 99532800
-        elementCount: 8
-      - offset: 100188160
-        elementCount: 3
-      - offset: 100433920
-        elementCount: 1
-      - offset: 100515840
-        elementCount: 14
-      - offset: 101662720
-        elementCount: 13
-      - offset: 102727680
-        elementCount: 2
-      - offset: 102891520
-        elementCount: 1
-      - offset: 102973440
-        elementCount: 3
-      - offset: 103219200
-        elementCount: 13
-      - offset: 104284160
-        elementCount: 14
-      - offset: 105431040
-        elementCount: 6
-      - offset: 105922560
-        elementCount: 2
-      - offset: 106086400
-        elementCount: 10
-      - offset: 106905600
-        elementCount: 4
-      - offset: 107233280
-        elementCount: 10
-      - offset: 108052480
-        elementCount: 14
-      - offset: 109199360
-        elementCount: 22
-      - offset: 111001600
-        elementCount: 14
-      - offset: 112148480
-        elementCount: 14
-      - offset: 113295360
-        elementCount: 9
-      - offset: 114032640
-        elementCount: 1
-      - offset: 114114560
-        elementCount: 1
-      - offset: 114196480
-        elementCount: 12
-      - offset: 115179520
-        elementCount: 4
-      - offset: 115507200
-        elementCount: 14
-      - offset: 116654080
-        elementCount: 1
-      - offset: 116736000
-        elementCount: 11
-      - offset: 117637120
-        elementCount: 6
-      - offset: 118128640
-        elementCount: 4
-      - offset: 118456320
-        elementCount: 16
-      - offset: 119767040
-        elementCount: 13
-      - offset: 120832000
-        elementCount: 7
-      - offset: 121405440
-        elementCount: 2
-      - offset: 121569280
-        elementCount: 7
-      - offset: 122142720
-        elementCount: 10
-      - offset: 122961920
-        elementCount: 13
-      - offset: 124026880
-        elementCount: 14
-      - offset: 125173760
-        elementCount: 13
-      - offset: 126238720
-        elementCount: 1
-      - offset: 126320640
-        elementCount: 7
-      - offset: 126894080
-        elementCount: 7
-      - offset: 127467520
-        elementCount: 6
-      - offset: 127959040
-        elementCount: 6
-      - offset: 128450560
-        elementCount: 15
-      - offset: 129679360
-        elementCount: 14
-      - offset: 130826240
-        elementCount: 12
-      - offset: 131809280
-        elementCount: 5
-      - offset: 132218880
-        elementCount: 1
-      - offset: 132300800
-        elementCount: 5
-      - offset: 132710400
-        elementCount: 9
-      - offset: 133447680
-        elementCount: 14
-      - offset: 134594560
-        elementCount: 10
-      - offset: 135413760
-        elementCount: 9
-      - offset: 136151040
-        elementCount: 16
-      - offset: 137461760
-        elementCount: 9
-      - offset: 138199040
-        elementCount: 5
-      - offset: 138608640
-        elementCount: 2
-      - offset: 138772480
-        elementCount: 11
-      - offset: 139673600
-        elementCount: 13
-      - offset: 140738560
-        elementCount: 13
-      - offset: 141803520
-        elementCount: 14
-      - offset: 142950400
-        elementCount: 14
-      - offset: 144097280
-        elementCount: 14
-      - offset: 145244160
-        elementCount: 9
-      - offset: 145981440
-        elementCount: 3
-      - offset: 146227200
-        elementCount: 10
-      - offset: 147046400
-        elementCount: 11
-      - offset: 147947520
-        elementCount: 6
-      - offset: 148439040
-        elementCount: 15
-      - offset: 149667840
-        elementCount: 12
-      - offset: 150650880
-        elementCount: 3
-      - offset: 150896640
-        elementCount: 14
-      - offset: 152043520
-        elementCount: 12
-      - offset: 153026560
-        elementCount: 3
-      - offset: 153272320
-        elementCount: 12
-      - offset: 154255360
-        elementCount: 10
-      - offset: 155074560
-        elementCount: 2
-      - offset: 155238400
-        elementCount: 5
-      - offset: 155648000
-        elementCount: 12
-      - offset: 156631040
-        elementCount: 10
-      - offset: 157450240
-        elementCount: 14
-      - offset: 158597120
-        elementCount: 14
-      - offset: 159744000
-        elementCount: 14
-      - offset: 160890880
-        elementCount: 13
-      - offset: 161955840
-        elementCount: 14
-      - offset: 163102720
-        elementCount: 13
-      - offset: 164167680
-        elementCount: 9
-      - offset: 164904960
-        elementCount: 11
-      - offset: 165806080
-        elementCount: 13
-      - offset: 166871040
-        elementCount: 10
-      - offset: 167690240
-        elementCount: 15
-      - offset: 168919040
-        elementCount: 4
-      - offset: 169246720
-        elementCount: 12
-      - offset: 170229760
-        elementCount: 16
-      - offset: 171540480
-        elementCount: 2
-      - offset: 171704320
-        elementCount: 6
-      - offset: 172195840
-        elementCount: 9
-      - offset: 172933120
-        elementCount: 3
-      - offset: 173178880
-        elementCount: 2
-      - offset: 173342720
-        elementCount: 8
-      - offset: 173998080
-        elementCount: 1
-      - offset: 174080000
-        elementCount: 1
-      - offset: 174161920
-        elementCount: 5
-      - offset: 174571520
-        elementCount: 11
-      - offset: 175472640
-        elementCount: 13
-      - offset: 176537600
-        elementCount: 13
-      - offset: 177602560
-        elementCount: 14
-      - offset: 178749440
-        elementCount: 13
-      - offset: 179814400
-        elementCount: 8
-      - offset: 180469760
-        elementCount: 2
-      - offset: 180633600
-        elementCount: 11
-      - offset: 181534720
-        elementCount: 16
-      - offset: 182845440
-        elementCount: 15
-      - offset: 184074240
-        elementCount: 16
-      - offset: 185384960
-        elementCount: 13
-      - offset: 186449920
-        elementCount: 4
-      - offset: 186777600
-        elementCount: 2
-      - offset: 186941440
-        elementCount: 1
-      - offset: 187023360
-        elementCount: 2
-      - offset: 187187200
-        elementCount: 9
-      - offset: 187924480
-        elementCount: 15
-      - offset: 189153280
-        elementCount: 11
-      - offset: 190054400
-        elementCount: 3
-      - offset: 190300160
-        elementCount: 5
-      - offset: 190709760
-        elementCount: 13
-      - offset: 191774720
-        elementCount: 15
-      - offset: 193003520
-        elementCount: 1
-      - offset: 193085440
-        elementCount: 4
-      - offset: 193413120
-        elementCount: 3
-      - offset: 193658880
-        elementCount: 5
-      - offset: 194068480
-        elementCount: 1
-      - offset: 194150400
-        elementCount: 4
-      - offset: 194478080
-        elementCount: 1
-      - offset: 194560000
-        elementCount: 2
-      - offset: 194723840
-        elementCount: 2
-      - offset: 194887680
-        elementCount: 6
-      - offset: 195379200
-        elementCount: 10
-      - offset: 196198400
-        elementCount: 16
-      - offset: 197509120
-        elementCount: 11
-      - offset: 198410240
-        elementCount: 11
-      - offset: 199311360
-        elementCount: 4
-      - offset: 199639040
-        elementCount: 15
-      - offset: 200867840
-        elementCount: 14
-      - offset: 202014720
-        elementCount: 14
-      - offset: 203161600
-        elementCount: 14
-      - offset: 204308480
-        elementCount: 14
-      - offset: 205455360
-        elementCount: 13
-      - offset: 206520320
-        elementCount: 17
-      - offset: 207912960
-        elementCount: 10
-      - offset: 208732160
-        elementCount: 7
-      - offset: 209305600
-        elementCount: 11
-      - offset: 210206720
-        elementCount: 5
-      - offset: 210616320
-        elementCount: 15
-      - offset: 211845120
-        elementCount: 4
-      - offset: 212172800
-        elementCount: 3
-      - offset: 212418560
-        elementCount: 9
-      - offset: 213155840
-        elementCount: 14
-      - offset: 214302720
-        elementCount: 11
-      - offset: 215203840
-        elementCount: 14
-      - offset: 216350720
-        elementCount: 3
-      - offset: 216596480
-        elementCount: 15
-      - offset: 217825280
-        elementCount: 3
-      - offset: 218071040
-        elementCount: 1
-      - offset: 218152960
-        elementCount: 5
-      - offset: 218562560
-        elementCount: 1
-      - offset: 218644480
-        elementCount: 3
-      - offset: 218890240
-        elementCount: 1
-      - offset: 218972160
-        elementCount: 3
-      - offset: 219217920
-        elementCount: 1
-      - offset: 219299840
-        elementCount: 1
-      - offset: 219381760
-        elementCount: 10
-      - offset: 220200960
-        elementCount: 10
-      - offset: 221020160
-        elementCount: 15
-      - offset: 222248960
-        elementCount: 14
-      - offset: 223395840
-        elementCount: 12
-      - offset: 224378880
-        elementCount: 9
-      - offset: 225116160
-        elementCount: 3
-      - offset: 225361920
-        elementCount: 8
-      - offset: 226017280
-        elementCount: 11
-      - offset: 226918400
-        elementCount: 12
-      - offset: 227901440
-        elementCount: 5
-      - offset: 228311040
-        elementCount: 21
-      - offset: 230031360
-        elementCount: 14
-      - offset: 231178240
-        elementCount: 9
-      - offset: 231915520
-        elementCount: 21
-      - offset: 233635840
-        elementCount: 14
-      - offset: 234782720
-        elementCount: 14
-      - offset: 235929600
-        elementCount: 19
-      - offset: 237486080
-        elementCount: 15
-      - offset: 238714880
-        elementCount: 17
-      - offset: 240107520
-        elementCount: 19
-      - offset: 241664000
-        elementCount: 14
-      - offset: 242810880
-        elementCount: 16
-      - offset: 244121600
-        elementCount: 19
-      - offset: 245678080
-        elementCount: 3
-      - offset: 245923840
-        elementCount: 7
-      - offset: 246497280
-        elementCount: 8
-      - offset: 247152640
-        elementCount: 9
-      - offset: 247889920
-        elementCount: 6
-      - offset: 248381440
-        elementCount: 4
-      - offset: 248709120
-        elementCount: 6
-      - offset: 249200640
-        elementCount: 4
-      - offset: 249528320
-        elementCount: 2
-      - offset: 249692160
-        elementCount: 11
-      - offset: 250593280
-        elementCount: 4
-      - offset: 250920960
-        elementCount: 7
-      - offset: 251494400
-        elementCount: 10
-      - offset: 252313600
-        elementCount: 10
-      - offset: 253132800
-        elementCount: 10
-      - offset: 253952000
-        elementCount: 10
-      - offset: 254771200
-        elementCount: 10
-      - offset: 255590400
-        elementCount: 10
-      - offset: 256409600
-        elementCount: 10
-      - offset: 257228800
-        elementCount: 11
-      - offset: 258129920
-        elementCount: 11
-      - offset: 259031040
-        elementCount: 10
-      - offset: 259850240
-        elementCount: 10
-      - offset: 260669440
-        elementCount: 10
-      - offset: 261488640
-        elementCount: 6
-      - offset: 261980160
-        elementCount: 14
-      - offset: 263127040
-        elementCount: 13
-      - offset: 264192000
-        elementCount: 13
-      - offset: 265256960
-        elementCount: 13
-      - offset: 266321920
-        elementCount: 13
-      - offset: 267386880
-        elementCount: 13
-      - offset: 268451840
-        elementCount: 10
-      - offset: 269271040
-        elementCount: 3
-      - offset: 269516800
-        elementCount: 2
-      - offset: 269680640
-        elementCount: 10
-      - offset: 270499840
-        elementCount: 6
-      - offset: 270991360
-        elementCount: 8
-      - offset: 271646720
-        elementCount: 2
-      - offset: 271810560
-        elementCount: 6
-      - offset: 272302080
-        elementCount: 14
-      - offset: 273448960
-        elementCount: 13
-      - offset: 274513920
-        elementCount: 14
-      - offset: 275660800
-        elementCount: 13
-      - offset: 276725760
-        elementCount: 14
-      - offset: 277872640
-        elementCount: 2
-      - offset: 278036480
-        elementCount: 13
-      - offset: 279101440
-        elementCount: 13
-      - offset: 280166400
-        elementCount: 12
-      - offset: 281149440
-        elementCount: 11
-      - offset: 282050560
+      - offset: 28205056
         elementCount: 1
     m_Asset: {fileID: 4900000, guid: 98eccd44c4aad654887dc027f15cec99, type: 3}
   scenarios:
@@ -9906,8 +9906,8 @@ MonoBehaviour:
   bakedSimplificationLevels: 3
   bakedMinDistanceBetweenProbes: 1
   bakedProbeOcclusion: 1
-  bakedSkyOcclusionValue: 1
-  bakedSkyShadingDirectionValue: 1
+  bakedSkyOcclusionValue: 0
+  bakedSkyShadingDirectionValue: 0
   bakedProbeOffset: {x: 0, y: 0, z: 0}
   bakedMaskCount: 1
   bakedLayerMasks:
@@ -9921,9 +9921,9 @@ MonoBehaviour:
   L2TextureChunkSize: 32768
   ProbeOcclusionChunkSize: 32768
   sharedValidityMaskChunkSize: 8192
-  sharedSkyOcclusionL0L1ChunkSize: 65536
-  sharedSkyShadingDirectionIndicesChunkSize: 8192
-  sharedDataChunkSize: 81920
+  sharedSkyOcclusionL0L1ChunkSize: 0
+  sharedSkyShadingDirectionIndicesChunkSize: 0
+  sharedDataChunkSize: 8192
   supportPositionChunkSize: 98304
   supportValidityChunkSize: 32768
   supportTouchupChunkSize: 32768
@@ -9940,12 +9940,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   minRendererVolumeSize: 0.1
-  skyOcclusion: 1
+  skyOcclusion: 0
   skyOcclusionBakingSamples: 2048
   skyOcclusionBakingBounces: 2
   skyOcclusionAverageAlbedo: 0.6
   skyOcclusionBackFaceCulling: 0
-  skyOcclusionShadingDirection: 1
+  skyOcclusionShadingDirection: 0
   useRenderingLayers: 0
   renderingLayerMasks: []
   m_SceneBakeData:
