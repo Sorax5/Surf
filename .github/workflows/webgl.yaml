@@ -47,22 +47,23 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          # On active le cache interne de l'action builder
           cacheMode: 'library' 
-          # Indispensable si tu modifies des fichiers pendant le build (comme des assets générés)
           allowDirtyBuild: true 
 
       - name: Upload du Build vers Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          # On cible le dossier par défaut de unity-builder
-          path: build/WebGL
+          name: github-pages
+          path: build/WebGL/WebGL
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - name: Deploy
+      - name: Déploiement natif sur GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
