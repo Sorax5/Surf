@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          lfs: true # Gardé car essentiel pour Unity
+          lfs: false
 
       # Libération d'espace ultra-rapide (env. 20s au lieu de 3min)
       - name: Free disk space
