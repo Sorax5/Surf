@@ -2,69 +2,67 @@ name: Build Unity WebGL & Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [master]
   workflow_dispatch:
 
 permissions:
-  contents: read   # Permission pour le checkout (lecture)
-  pages: write     # Permission pour le déploiement sur GitHub Pages (écriture)
-  id-token: write  # Nécessaire pour l'authentification OIDC de l'action de déploiement
-
-env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     name: Build WebGL
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout du code
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: true # Gardé car essentiel pour Unity
 
-      - name: Mise en cache de la librairie Unity
-        uses: actions/cache@v3
+      # Libération d'espace ultra-rapide (env. 20s au lieu de 3min)
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          # On garde le strict nécessaire pour le runner
+
+      # Cache sans Hash (Stratégie incrémentale)
+      - name: Cache Unity Library
+        uses: actions/cache@v4
         with:
           path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          # Clé fixe pour toujours essayer de réutiliser la Library précédente
+          key: Library-WebGL-v1
           restore-keys: |
+            Library-WebGL-
             Library-
-
-      - name: Libération d'espace disque
-        uses: jlumbroso/free-disk-space@main
-        with:
-          tool-cache: false
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: true
-          docker-images: true
-          swap-storage: true
 
       - name: Build Unity WebGL
         uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          buildName: WebGL
+          # On active le cache interne de l'action builder
+          cacheMode: 'library' 
+          # Indispensable si tu modifies des fichiers pendant le build (comme des assets générés)
+          allowDirtyBuild: true 
 
       - name: Upload du Build vers Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: build/WebGL/WebGL
-          
+          # On cible le dossier par défaut de unity-builder
+          path: build/WebGL
+
   deploy:
     name: Deploy to GitHub Pages
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     needs: build
+    runs-on: ubuntu-latest
     steps:
-      - name: Déploiement natif sur GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
