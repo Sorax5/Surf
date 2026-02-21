@@ -3,7 +3,22 @@ guid: 81b81a6c5fabb6a49bcc14870f3c9e51
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carroserrie
+    second: {fileID: 2100000, guid: 128bf8dd31586df4fb2ec1a68c68b4f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hide
+    second: {fileID: 2100000, guid: faf29d0edfd2c1349a34da62ea08b0da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: retro
+    second: {fileID: 2100000, guid: 443b8ef8e30b8eb49a9324a507d31146, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
