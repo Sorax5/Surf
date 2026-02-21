@@ -19,15 +19,13 @@ public class PlayerController : MonoBehaviour
     private InputAction brakeAction;
 
     // Paramètres
-    [SerializeField] private float gravityMultiplier = 3f; // Gravité supplémentaire en l'air
-    [SerializeField] private float sprintMultiplier = 2f;   // Multiplicateur de vitesse pour le sprint
-    [SerializeField] private float brakeForce = 40f;        // Force de freinage
+    [SerializeField] private float sprintMultiplier = 2f;
+    [SerializeField] private float brakeForce = 40f;
     
     [SerializeField] private ParticleSystem fireParticles;
     [SerializeField] private ParticleSystem smokeParticles;
-    [SerializeField] private float minSmokeSpeed = 2f; // Vitesse minimale pour activer la fumée
-
-    // État
+    [SerializeField] private float minSmokeSpeed = 2f;
+    
     private Vector2 moveInput;
     private float sprintPressure = 0f;
     private float brakePressure = 0f;
@@ -42,10 +40,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        moveAction = playerInput.actions.FindAction("Move");
-        sprintAction = playerInput.actions.FindAction("Sprint");
-        brakeAction = playerInput.actions.FindAction("Brake");
-        // Suppression de la gestion des particules dans les events
+        moveAction = playerInput?.actions.FindAction("Move");
+        sprintAction = playerInput?.actions.FindAction("Sprint");
+        brakeAction = playerInput?.actions.FindAction("Brake");
     }
 
     private void Update()
@@ -58,16 +55,21 @@ public class PlayerController : MonoBehaviour
         {
             var emission = fireParticles.emission;
             emission.rateOverTime = new ParticleSystem.MinMaxCurve(Mathf.Lerp(0f, 200f, sprintPressure));
-            var shouldPlay = sprintPressure > 0.01f && groundChecker.IsGrounded();
-            if (shouldPlay)
+            
+            if (sprintPressure > 0.01f && groundChecker.IsGrounded())
             {
                 if (!fireParticles.isEmitting)
+                {
                     fireParticles.Play();
+                }
+                    
             }
             else
             {
                 if (fireParticles.isEmitting)
+                {
                     fireParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
             }
         }
         
@@ -75,30 +77,30 @@ public class PlayerController : MonoBehaviour
         {
             var emission = smokeParticles.emission;
             emission.rateOverTime = new ParticleSystem.MinMaxCurve(Mathf.Lerp(0f, 100f, brakePressure));
-            // Calcul de la vitesse horizontale
-            Vector3 horizontalVelocity = rb ? rb.linearVelocity : Vector3.zero;
+            
+            var horizontalVelocity = rb ? rb.linearVelocity : Vector3.zero;
             horizontalVelocity.y = 0f;
-            float speed = horizontalVelocity.magnitude;
-            // On ne joue les particules de fumée que si le joueur freine, est au sol, et va plus vite que minSmokeSpeed
-            var shouldPlay = brakePressure > 0.01f && groundChecker.IsGrounded() && speed > minSmokeSpeed;
-            if (shouldPlay)
+            var speed = horizontalVelocity.magnitude;
+            
+            if (brakePressure > 0.01f && groundChecker.IsGrounded() && speed > minSmokeSpeed)
             {
                 if (!smokeParticles.isEmitting)
+                {
                     smokeParticles.Play();
+                }
             }
             else
             {
                 if (smokeParticles.isEmitting)
+                {
                     smokeParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
             }
         }
-
-        
     }
 
     private void FixedUpdate()
     {
-        // Calcul direction
         var moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
         var cameraForward = cam.transform.forward;
         cameraForward.y = 0f;
@@ -108,8 +110,7 @@ public class PlayerController : MonoBehaviour
         cameraRight.Normalize();
 
         var acceleration = groundChecker.IsGrounded() ? 20f : 10f;
-
-        // Sprint : forcer le déplacement dans la direction forward caméra, force proportionnelle à la pression
+        
         if (sprintAction != null && sprintPressure > 0.01f && groundChecker.IsGrounded())
         {
             acceleration *= Mathf.Lerp(1f, sprintMultiplier, sprintPressure);
