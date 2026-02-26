@@ -20,23 +20,24 @@ jobs:
         with:
           lfs: false
 
-      # Libération d'espace ultra-rapide (env. 20s au lieu de 3min)
       - name: Free disk space
         run: |
           sudo rm -rf /usr/share/dotnet
           sudo rm -rf /usr/local/lib/android
           sudo rm -rf /opt/ghc
-          # On garde le strict nécessaire pour le runner
 
-      # Cache sans Hash (Stratégie incrémentale)
-      - name: Cache Unity Library
-        uses: actions/cache@v4
+      # 🔥 Installation de Blender pour l'import des .blend
+      - name: Install Blender
+        run: |
+          sudo apt update
+          sudo apt install -y blender
+          blender --version
+
+      - uses: actions/cache@v4
         with:
           path: Library
-          # Clé fixe pour toujours essayer de réutiliser la Library précédente
-          key: Library-WebGL-v1
+          key: Library-WebGL-${{ hashFiles('ProjectSettings/ProjectVersion.txt') }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-WebGL-
             Library-
 
       - name: Build Unity WebGL
@@ -47,8 +48,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          cacheMode: 'library' 
-          allowDirtyBuild: true 
+          allowDirtyBuild: true
 
       - name: Upload du Build vers Pages
         uses: actions/upload-pages-artifact@v3
