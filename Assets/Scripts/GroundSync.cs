@@ -5,64 +5,57 @@ using UnityEngine;
 [ExecuteAlways]
 public class GroundSync : MonoBehaviour
 {
-    [SerializeField, Layer] private string layerName = "Ground";
+    [Header("References")]
+    [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform player;
-    [SerializeField] private Transform cameraTransform; // Référence à la caméra
+    [SerializeField] private Transform cameraTransform;
+
+    [Header("Settings")]
     [SerializeField, Range(1f, 30f)] private float rotationSmoothSpeed = 15f;
-    [SerializeField, Range(0.01f, 1f)] private float normalLerpSpeed = 0.15f;
-    [SerializeField, Range(0f, 10f)] private float minNormalAngle = 1f; // Seuil d'angle minimum pour ignorer les petites variations
+    [SerializeField, Range(1f, 20f)] private float normalSmoothSpeed = 10f; // Changé pour être basé sur le temps
+    [SerializeField] private float raycastDistance = 2f;
+    [SerializeField] private float raycastOffset = 0.5f;
 
-    private Vector3 normalFromGround = Vector3.up;
-    private Vector3 targetNormal = Vector3.up;
-    private RaycastHit hit;
-    private LayerMask layerMask;
-
-    private void Awake()
-    {
-        layerMask = LayerMask.GetMask(layerName);
-    }
-
-    private void Update()
-    {
-        var ray = new Ray(transform.position + Vector3.up * 0.5f, Vector3.down);
-        if (Physics.Raycast(ray, out hit, 10f, layerMask))
-        {
-            targetNormal = hit.normal;
-        }
-        else
-        {
-            targetNormal = Vector3.up;
-        }
-
-        // Interpolation douce de la normale
-        if (Vector3.Angle(normalFromGround, targetNormal) > minNormalAngle)
-        {
-            normalFromGround = Vector3.Slerp(normalFromGround, targetNormal, normalLerpSpeed);
-        }
-        else
-        {
-            normalFromGround = Vector3.Slerp(normalFromGround, targetNormal, normalLerpSpeed * 0.25f); // Lissage plus lent pour les petites variations
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        // Utiliser la direction de la caméra projetée sur le plan du sol
-        Vector3 cameraForward = cameraTransform ? cameraTransform.forward : Vector3.forward;
-        var projectedForward = Vector3.ProjectOnPlane(cameraForward, normalFromGround).normalized;
-
-        if (projectedForward.sqrMagnitude > 0.01f)
-        {
-            var targetRotation = Quaternion.LookRotation(projectedForward, normalFromGround);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * rotationSmoothSpeed);
-        }
-    }
+    private Vector3 currentNormal = Vector3.up;
 
     private void LateUpdate()
     {
-        if (player)
+        if (!player)
         {
-            transform.position = player.position;
+            return;
         }
+        
+        transform.position = player.position;
+        
+        var ray = new Ray(transform.position + Vector3.up * raycastOffset, Vector3.down);
+        var targetNormal = Vector3.up;
+        
+        if (Physics.Raycast(ray, out var hit, raycastDistance + raycastOffset, groundLayer))
+        {
+            targetNormal = hit.normal;
+        }
+        
+        currentNormal = Vector3.Slerp(currentNormal, targetNormal, Time.deltaTime * normalSmoothSpeed);
+
+        var cameraForward = cameraTransform ? cameraTransform.forward : Vector3.forward;
+        var projectedForward = Vector3.ProjectOnPlane(cameraForward, currentNormal);
+
+        if (!(projectedForward.sqrMagnitude > 0.001f))
+        {
+            return;
+        }
+        
+        var targetRotation = Quaternion.LookRotation(projectedForward.normalized, currentNormal);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothSpeed);
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + currentNormal);
+        
+        Gizmos.color = Color.red;
+        var ray = new Ray(transform.position + Vector3.up * raycastOffset, Vector3.down);
+        Gizmos.DrawLine(ray.origin, ray.origin + ray.direction * (raycastDistance + raycastOffset));
     }
 }
