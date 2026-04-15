@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody))]
@@ -22,13 +23,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintMultiplier = 2f;
     [SerializeField] private float brakeForce = 40f;
     
-    [SerializeField] private ParticleSystem fireParticles;
+    [SerializeField] private VisualEffect fireParticles;
+    [SerializeField] private string fireRateProperty = "Rate";
+    [SerializeField] private string fireActiveProperty = "IsActive";
     [SerializeField] private ParticleSystem smokeParticles;
     [SerializeField] private float minSmokeSpeed = 2f;
     
     private Vector2 moveInput;
     private float sprintPressure = 0f;
     private float brakePressure = 0f;
+    private bool isFireVfxPlaying;
 
     private void Awake()
     {
@@ -43,6 +47,8 @@ public class PlayerController : MonoBehaviour
         moveAction = playerInput?.actions.FindAction("Move");
         sprintAction = playerInput?.actions.FindAction("Sprint");
         brakeAction = playerInput?.actions.FindAction("Brake");
+        
+        fireParticles?.Stop();
     }
 
     private void Update()
@@ -53,23 +59,28 @@ public class PlayerController : MonoBehaviour
         
         if (fireParticles)
         {
-            var emission = fireParticles.emission;
-            emission.rateOverTime = new ParticleSystem.MinMaxCurve(Mathf.Lerp(0f, 200f, sprintPressure));
-            
-            if (sprintPressure > 0.01f && groundChecker.IsGrounded())
+            var shouldEmitFire = sprintPressure > 0.01f && groundChecker.IsGrounded();
+            var fireRate = Mathf.Lerp(0f, 200f, sprintPressure);
+
+            if (!string.IsNullOrWhiteSpace(fireRateProperty) && fireParticles.HasFloat(fireRateProperty))
             {
-                if (!fireParticles.isEmitting)
-                {
-                    fireParticles.Play();
-                }
-                    
+                fireParticles.SetFloat(fireRateProperty, fireRate);
             }
-            else
+
+            if (!string.IsNullOrWhiteSpace(fireActiveProperty) && fireParticles.HasBool(fireActiveProperty))
             {
-                if (fireParticles.isEmitting)
-                {
-                    fireParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                }
+                fireParticles.SetBool(fireActiveProperty, shouldEmitFire);
+            }
+
+            if (shouldEmitFire && !isFireVfxPlaying)
+            {
+                fireParticles.Play();
+                isFireVfxPlaying = true;
+            }
+            else if (!shouldEmitFire && isFireVfxPlaying)
+            {
+                fireParticles.Stop();
+                isFireVfxPlaying = false;
             }
         }
         
