@@ -60,11 +60,12 @@ public class PlayerController : MonoBehaviour
         if (fireParticles)
         {
             var shouldEmitFire = sprintPressure > 0.01f && groundChecker.IsGrounded();
-            var fireRate = Mathf.Lerp(0f, 200f, sprintPressure);
+            var fireRate = Mathf.Lerp(0f, 1f, sprintPressure);
 
             if (!string.IsNullOrWhiteSpace(fireRateProperty) && fireParticles.HasFloat(fireRateProperty))
             {
                 fireParticles.SetFloat(fireRateProperty, fireRate);
+                Gamepad.current?.SetMotorSpeeds(fireRate * 0.5f, fireRate * 0.5f);
             }
 
             if (!string.IsNullOrWhiteSpace(fireActiveProperty) && fireParticles.HasBool(fireActiveProperty))
