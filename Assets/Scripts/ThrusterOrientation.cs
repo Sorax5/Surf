@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,7 +14,12 @@ public class ThrusterOrientation : MonoBehaviour
     public float vitesse = 10f;
 
     private InputAction moveAction;
-    private List<Quaternion> rotationsInitiales = new List<Quaternion>();
+    private List<Quaternion> rotationsInitiales;
+
+    private void Awake()
+    {
+        rotationsInitiales = new List<Quaternion>(thrusters.Count);
+    }
 
     private void Start()
     {
@@ -24,9 +30,14 @@ public class ThrusterOrientation : MonoBehaviour
         
         if (thrusters != null)
         {
-            foreach (var t in thrusters.Where(t => t))
+            foreach (var thruster in thrusters)
             {
-                rotationsInitiales.Add(t.transform.localRotation);
+                if (!thruster)
+                {
+                    continue;
+                }
+                
+                rotationsInitiales.Add(thruster.transform.localRotation);
             }
         }
 
